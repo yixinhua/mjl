@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>麦吉丽Mageline官方网站暨网上商城</title>
+	<link rel="stylesheet" href="login.css">
+</head>
+<body>
+	<div id="header_link"></div>
+	<div style="background:black;">
+	<!--头部轮播-->
+	<div id="homelunbo">
+	<div id="himg">
+	<div class='homefirst'>
+	<a href="" style="width:100%"><img src="image/1534801292390926112.jpg" style="width:100%"></a>
+	</div>
+	<div class='homefirst'>
+	<a href="" style="width:100%"><img src="image/1534801281778985402.jpg" style="width:100%"></a>
+	</div>
+	</div>
+	<ul id="num" class="num">
+	<li class="bgshow"></li>
+	<li></li>
+	</ul>
+	</div>
+	<!--下面四张图片-->
+	<div class='homefirst1' style='margin-top:40px;'>
+	<a href="" class='left'><img src="image/idx1-text1.png" alt="" style='width:100%;'></a>
+	<img src="image/1534801519403236458.jpg" style='width:100%;'>
+	</div>
+	<div class='homefirst1' >
+	<a href="" class='right'><img src="image/1498868337221163074.png" alt="" style='width:100%;'></a>
+	<img src="image/1534801541590142314.jpg" style='width:100%;'>
+	</div>
+	<div class='homefirst1'>
+	<a href="" class='left'><img src="image/1498867997064395733.png" alt="" style='width:100%;'></a>
+	<img src="image/1534801817006159579.jpg" style='width:100%;'>
+	</div>
+	<div class='homefirst1' >
+	<a href="" class='right'><img src="image/1534805930582831177.png" alt="" style='width:100%;'></a>
+	<img src="image/1534802153030804545.jpg" style='width:100%;'>
+	</div>
+	<div class='homefirst1' >
+	<a href="" class='right'><img src="image/idx4-text1.png" alt="" style='width:100%;'></a>
+	<img src="image/1534801862259557816.jpg" style='width:100%;'>
+	</div>
+	<br>
+	<br>
+	<br>
+	</div>
+	<div id="foot_link"></div>
+	 <script src="jquery.min.js"></script>
+	 <script>
+      $(function(){
+        $('#header_link').load('mjl_header.html');
+        $('#foot_link').load('mjl_footer.html');
+      })
+    </script>
+	<script>
+	//获取元素
+	var ho=document.getElementById("homelunbo")
+	var himg=document.getElementById("himg");
+	var home=document.getElementsByClassName("homefirst");
+	var num=document.getElementsByClassName("num")[0].getElementsByTagName("li")
+	var i=0;
+	var dian=function(){
+		for(var j=0;j<num.length;j++){
+			num[j].className=""
+		}
+	}
+	var pic=function(){
+		dian();
+		num[i].className="bgshow"
+	}
+	//圆点对应图片自动轮放
+	function lunbo(){
+		i++
+		if(i>1){
+		himg.style.marginLeft="0px";
+		i=0;
+	   }else{
+		himg.style.marginLeft="-"+1903*i+"px"
+		}
+		pic();
+	}
+	//点击圆点图片转换
+	for(var s=0;s<num.length;s++){
+			num[s].index=s
+	num[s].onclick=function(){
+		dian();
+		var s=this.index;
+		himg.style.marginLeft="-"+1903*s+"px"
+		num[s].className="bgshow"
+	 }
+    }
+	var n=setInterval(lunbo,2000)
+	/*ho.onmouseover=function(){
+		clearInterval(n)
+	}
+	ho.onmouseout=function(){
+		n=setInterval(lunbo,1500)
+	}
+	window.onscroll=function(){
+    //获得滚动过的距离-网页顶部超出文档显示区顶部的距离
+    var scrollTop=document.body.scrollTop||document.documentElement.scrollTop;
+	var Geft=document.getElementsByClassName("left")[0]
+	var Gight=document.getElementsByClassName("right")[0]
+	var home1=document.getElementsByClassName("homefirst1")
+	console.log(home1)
+	console.log(Geft)
+	console.log(Gight)
+    if(scrollTop>=500)
+    home1.style.display="none"
+  }*/
+	</script>
+</body>
+</html>

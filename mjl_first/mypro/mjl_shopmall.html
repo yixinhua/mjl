@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>麦吉丽Mageline官方网站暨网上商城</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+	<!--中部导航-->
+	<div id="header_link"></div>
+	<div class='mid'>
+	<div class='mid1'>
+	<a href="mjl_home.html">首页</a>
+	<b>></b>
+	<a href="">官方商城</a>
+    <a href="mjl_product.html
+	" id="mid-a">查看所有产品</a>
+	</div>
+	</div>
+	<div id="shop">
+	<div id="simg">
+	<div class="banner"><a href="mjl_product.html"><img src="image/01lunbo.jpg"></a></div>
+	<div class="banner"><a href="#"><img src="image/02lunbo.jpg"></a></div>
+	<div class="banner"><a href="#"><img src="image/03lunbo.jpg"></a></div>
+	<div class="banner"><a href="#"><img src="image/04lunbo.jpg"></a></div>
+	<div class="banner"><a href="#"><img src="image/05lunbo.jpg"></a></div>
+	</div>
+	<ul id="num" class="num">
+		<li class="bgshow"></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+	</div>
+	<div id="foot_link"></div>
+	 <script src="jquery.min.js"></script>
+	 <script>
+      $(function(){
+        $('#header_link').load('mjl_header.html');
+        $('#foot_link').load('mjl_footer.html');
+      })
+    </script>
+	<script>
+	 //获取元素
+	 var simg=document.getElementById("simg")
+	 var shop=document.getElementById("shop")
+	 var banner=document.getElementsByClassName("banner")
+	 var num=document.getElementsByClassName("num")[0].getElementsByTagName("li")
+	 var i=0;
+	 //清空圆点属性
+	 var dian=function(){
+		for(var j=0;j<num.length;j++){
+			num[j].className=""
+		}
+	}
+	var pic=function(){
+		dian();
+		num[i].className="bgshow"
+	}
+	//圆点对应图片自动轮放
+	function lunbo(){
+		i++
+		simg.style.marginLeft="-"+1000*i+"px"
+		if(i>banner.length-1){
+		simg.style.marginLeft="0px";
+		i=0;
+	  }
+         pic();
+	}
+	//点击圆点图片转换
+	for(var s=0;s<num.length;s++){
+			num[s].index=s
+			console.log(s);
+	num[s].onclick=function(){
+		dian();
+		var s=this.index;
+		simg.style.marginLeft="-"+1000*s+"px"
+		num[s].className="bgshow"
+	 }
+    }
+	var n=setInterval(lunbo,1500)
+	shop.onmouseover=function(){
+		clearInterval(n)
+	}
+	shop.onmouseout=function(){
+		n=setInterval(lunbo,1500)
+	}
+	</script>
+</body>
+</html>

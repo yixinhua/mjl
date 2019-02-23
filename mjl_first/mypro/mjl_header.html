@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="login.css">
+</head>
+<body>
+	<div class='header'>
+    <img src="image/logo.gif" class='logo'>
+	</div>
+	<div class='menu'>
+	<ul>
+		<li><a href="mjl_home.html" id='hover'>首页</a></li>
+		<li id='lone'><a href="mjl_renshi.html">认识Mageline</a></li>
+		<li><a href="">最新资讯</a></li>
+		<li id="guangfang"><a href="mjl_shopmall.html">官方商城</a></li>
+		<li><a href="mjl_fangwei.html">防伪验证</a></li>
+		<li id='shouquan'><a href="mjl_shouquan.html">授权查询</a></li>
+		<li id="shiti"><a href="">实体店加盟</a></li>
+		<li><a href="">资料下载</a></li>
+	</ul>
+	</div>
+	<div id='done'>
+		<ul>
+			<li>
+				<a href="mjl_pingpai.html">品牌故事</a><br>
+				<br>
+				<b>Mageline麦吉丽倡导“尽享素颜之美”崇尚女性优雅的皮肤护理观念，凭借优质的产品，高端的产品路线，风靡社交圈，受到广大爱美女性的青睐。</b>
+			</li>
+			<li><a href="#">关于商城</a><br>
+				<br>
+				<b>麦吉丽(Mageline)国内高端化妆品牌，唯一官方网站暨在线商城。为您提供专业的护肤、彩妆等全方位美肤体验。荣获首批中国民族品牌、诚信品牌奖。至臻品质·尽享素颜之美。咨询热线：4000-805-806</b>
+			</li>
+			<li><a href="mjl_chuangxin.html">创新理念</a><br>
+				<br>
+				<b>运用大自然多种植物精华成分，结合生物学、化学...</b>
+			</li>
+			<li><img src="image/1428372310130548309.jpg" alt=""></li>
+		</ul>
+		</div>
+		<div class="mid" id="d5">
+		<a href="" class='shouquan'>授权查询</a>
+		</div>
+		<div class="mid" id='d6'>
+		<ul class='shiti'>
+			<li><a href="">JOIN US</a></li>
+			<li><a href="">加盟基本条件</a></li>
+			<li><a href="">加盟咨询</a></li>
+			<li><a href="">实体店展</a></li>
+		</ul>
+		</div>
+		<!--官方商城-->
+		<div id="d7">
+		<div class="shang">
+			<ul>
+				<li class='shangcheng'>
+				<ul>
+					<li><a href="" id='big-size'>产品类型</a></li>
+					<li><a href="">彩妆</a></li>
+					<li><a href="">护肤</a></li>
+					<li><a href="">身体护理</a></li>
+					<li><a href="">果味饮品</a></li>
+				</ul>
+				</li>
+				<li class='shangcheng'>
+				<ul>
+					<li><a href="" id='big-size'>产品功能</a></li>
+					<li><a href="">卸妆清洁</a></li>
+					<li><a href="">爽肤水</a></li>
+					<li><a href="">精华</a></li>
+					<li><a href="">乳液</a></li>
+					<li><a href="">面霜</a></li>
+					<li><a href="">面膜</a></li>
+					<li><a href="">眼霜</a></li>
+					<li><a href="">隔离防护</a></li>
+				</ul>
+				</li>
+				<li class='shangcheng'>
+				<ul>
+					<li><a href="" id='big-size'>产品分类</a></li>
+					<li><a href="">素颜三部曲</a></li>
+					<li><a href="">雪颜晶透系列</a></li>
+					<li><a href="">水养润肤系列</a></li>
+					<li><a href="">面膜系列</a></li>
+					<li><a href="">彩妆系列</a></li>
+					<li><a href="">问题肌肤护理</a></li>
+					<li><a href="">其他护肤单品</a></li>
+					<li><a href="">新品上市</a></li>
+				</ul>
+				</li>
+			</ul>
+			<a href="mjl_product.html" id="p-a" >查看所有产品</a>
+		</div>
+		<div class="pic-p">
+			<p><a href="" id='big-size'>心意礼盒</a></p>
+			<img src="image/1438292497063184041.jpg">
+		</div>
+		<div class="pic-p">
+			<p ><a href="" id='big-size'>新品上市</a></p>
+			<img src="image/1438205479938260159.jpg">
+		</div>
+		</div>
+		<script>
+		 var lone=document.getElementById('lone');
+		var done=document.getElementById('done');
+			done.style.display='none';	
+		lone.onmouseover=function(){
+			done.style.display="block";
+		}
+		lone.onmouseout=function(){
+			done.style.display="none";
+		}
+		done.onmouseover=function(){
+			done.style.display="block";
+		}
+		done.onmouseout=function(){
+			done.style.display="none";
+		}
+		//授权
+		 var shouquan=document.getElementById('shouquan');
+		var d5=document.getElementById('d5');
+			d5.style.display='none';	
+		shouquan.onmouseover=function(){
+			d5.style.display="block";
+		}
+		shouquan.onmouseout=function(){
+			d5.style.display="none";
+		}
+		d5.onmouseover=function(){
+			d5.style.display="block";
+		}
+		d5.onmouseout=function(){
+			d5.style.display="none";
+		}
+		//实体
+		var shiti=document.getElementById('shiti');
+		var d6=document.getElementById('d6');
+			d6.style.display='none';	
+		shiti.onmouseover=function(){
+			d6.style.display="block";
+		}
+		shiti.onmouseout=function(){
+			d6.style.display="none";
+		}
+		d6.onmouseover=function(){
+			d6.style.display="block";
+		}
+		d6.onmouseout=function(){
+			d6.style.display="none";
+		}
+		//产品
+		var guangfang=document.getElementById('guangfang');
+		var d7=document.getElementById('d7');
+			d7.style.display='none';
+				
+		guangfang.onmouseover=function(){
+			d7.style.display="block";
+		}
+		guangfang.onmouseout=function(){
+			d7.style.display="none";
+		}
+		d7.onmouseover=function(){
+			d7.style.display="block";
+		}
+		d7.onmouseout=function(){
+			d7.style.display="none";
+		}
+		</script>
+</body>
+</html>

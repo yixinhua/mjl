@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>用户中心_麦吉丽Mageline官方网站暨网上商城</title>
+	<link rel="stylesheet" href="login.css">
+</head>
+<body>
+	<div id="header_link"></div>
+	<div class='mid'>
+	<div class='mid1'>
+	<a href="mjl_home.html">首页</a>
+	<b>></b>
+	用户中心
+	</div>
+	</div>
+	<div style='width:1200px;margin:0 auto;'>
+	<div id='login' style='height:380px;'>
+	<div id='img'><img src="image/reg-text.png" alt="">
+	</div>
+	<ul class='one'>
+		<li>
+		<div class='yonghuming'>
+	    <span>用&nbsp&nbsp户&nbsp&nbsp名</span>
+	    </div>
+        <div class='shuru'>
+	    <input type="txet" id='uname' class='input' onblur='checkuname()'> 
+	    <span style='color:#FF0000;'>*</span>
+		<span id='unameMsg'></span>
+	    </div>
+	   </li>
+		<li>
+		<div class='yonghuming'>
+	    <span>手机号码</span>
+	    </div>
+        <div class='shuru'>
+	    <input type="txet" id='phone' class='input'> 
+	    <span style='color:#FF0000;'>*</span>
+	    </div>
+		</li>
+		<li>
+		<div class='yonghuming'>
+	    <span>验&nbsp&nbsp证&nbsp&nbsp码</span>
+	    </div>
+        <div class='shuru'>
+	    <input type="txet" class='yanzhenma'>
+		<img src="image/captcha.png" alt="">
+	    </div>
+		</li>
+		<li>
+		<div class='yonghuming'>
+	    <span>登录密码</span>
+	    </div>
+        <div class='shuru'>
+	    <input type="password" id='upwd' class='input'> 
+	    <span style='color:#FF0000;'>*</span>
+	    </div>
+		</li>
+		<li>
+		<div class='yonghuming'>
+	    <span>密码强度</span>
+	    </div>
+        <div class='qiangdu'>
+	    <table>
+	    	<tr align='center'>
+	    		<td>弱</td>
+	    		<td>中</td>
+	    		<td>强</td>
+	    	</tr>
+	    </table>
+	    </div>
+		</li>
+		<li>
+		<div class='yonghuming'>
+	    <span>确认密码</span>
+	    </div>
+        <div class='shuru'>
+	    <input type="password" id='upwd1' class='input' > 
+	    <span style='color:#FF0000;'>*</span>
+		<span id='upwdMsg'></span>
+	    </div>
+		</li>
+		<div id='checkbox-zc'>
+	    <input type="checkbox" class='check-zc'>
+	    <span class='checks-zc'> 我同意麦吉丽（中国）品牌为向您提供更完善的服务和推介，将我的个人信息提供给品牌经销商或联盟企业</span>
+		<li>
+		<div class='yonghuming'>
+	    </div>
+        <div id='butt'>
+	    <input type="buttom" value='注册'  class='login-btn' onfocus='show()'> 
+		<span id='xianshi'></span>
+	    </div>
+		</li>
+    </ul>
+	</div>
+	</div>
+	<div id='login-box'>
+	<div class='login-boximg'>
+	<img src="image/reg-text2.png" >
+	</div>
+	<div class='login-wenzi'>我已经是麦吉丽会员</div>
+	<a href="login.html" class='btn'>立即登录</a>
+	</div>
+	</div>
+	<div id="foot_link"></div>
+	<script src="jquery.min.js"></script>
+	 <script>
+      $(function(){
+        $('#header_link').load('mjl_header.html');
+        $('#foot_link').load('mjl_footer.html');
+      })
+    </script>
+	<script>
+	//注册
+	var isRegister=false;
+	console.log(11);
+	upwd1.onblur=function(){
+		if(upwd.value==upwd1.value){
+			console.log(1);
+			upwdMsg.innerHTML='密码一致'
+			isRegister=true;
+		}else{
+			isRegister=false;
+			console.log(2);
+			upwdMsg.innerHTML='密码不一致'
+		}
+	}
+	function checkuname(){
+	var xhr=new XMLHttpRequest();
+	xhr.onreadystatechange=function(){
+    if(xhr.readyState==4&&xhr.status==200){
+	var result=xhr.responseText;
+	if(result==0){
+	unameMsg.innerHTML='用户名已被占用'
+	isRegister=false
+	}else{
+	unameMsg.innerHTML='用户名可用'
+	isRegister=true
+	}
+	}
+	}
+	xhr.open('get','/mypro/check?uname='+uname.value,true);
+	xhr.send(null)
+	}
+	function show(){
+	var xhr=new XMLHttpRequest();
+	xhr.onreadystatechange=function(){
+    if(xhr.readyState==4&&xhr.status==200){
+	var result=xhr.responseText;
+	if(result==1){
+	xianshi.innerHTML='注册成功'
+	}else{xianshi.innerHTML='注册失败'
+	}
+	}
+	}
+	xhr.open('post','/mypro/register',true)
+	var 
+	formdata='uname='+uname.value+'&phone='+phone.value+'&upwd='+upwd.value
+	xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+	xhr.send(formdata);
+	}
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="login.css">
+</head>
+<body>
+	<div id='bot'>
+	<div id='bot-btn'>
+	<ul>
+		<li><a href="" class="ic">职业发展</a></li>
+		<li><a href="" class="ic">隐私政策</a></li>
+		<li><a href="" class="ic">帮助中心</a></li>
+		<li><a href="" class="ic">联系我们</a></li>
+		<li><a href="" class="ico"></a></li>
+		<li><a href="" class="ico1"></a></li>
+	</ul>
+	<div class="ewm"><img src="image/weixin-ewm.jpg"></div>
+	</div>
+    </div >
+	<div id='pic'>
+	<table></table>
+	<a href="mjl_home.html"><img src="image/bot-logo.png" class='bot-logo'></a>
+    </div>
+	<div id='bot-wenben'>
+	<table></table>
+	© 2015-2018 湖北省麦吉丽生物科技有限公司 All rights reserved 鄂ICP备14010488号
+	<a href=""><img src="image/pic1.gif" alt=""></a>
+	</div>
+	<ul id='fix'>
+		<li class='denglu'>
+		<a href="login.html">登录</a>
+		<b>/</b>
+		<a href="mjl_register.html">注册</a>
+		</li>
+		<li>
+		<img src="image/ico-all-prc.png" class='i'>
+		<a href="mjl_product.html" class='chanping'>所有产品</a>
+		</li>
+		<li>
+		<img src="image/ico-car.png" class='i'>
+		<a href="" class='chanping'>购物袋</a></li>
+		<li>
+		<img src="image/ico-talk.png" class='i'>
+		<a href="" class='kefu'>在线客服</a></li>
+	</ul>
+	<script src="jquery-1.11.3.js"></script>
+	<script>
+		$(".ico1").mouseover(function(){
+			var $ico1=$(this)
+			$ico1.parent().parent().next()
+			.css("display","block")
+		})
+		$(".ico1").mouseout(function(){
+			var $ico1=$(this)
+			$ico1.parent().parent().next()
+			.css("display","none")
+		})
+		$(".ewm").mouseover(function(){
+			var $ewm=$(this)
+			$ewm.css("display","block")
+		})
+		$(".ewm").mouseout(function(){
+			var $ewm=$(this)
+			$ewm.css("display","none")
+		})
+	</script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>用户中心_麦吉丽Mageline官方网站暨网上商城</title>
+	<link rel="stylesheet" href="login.css">
+</head>
+<body>
+	<div id="header_link"></div>
+	<div class='mid'>
+	<div class='mid1'>
+	<a href="mjl_home.html">首页</a>
+	<b>></b>
+	用户中心
+	</div>
+	</div>
+	<div style='width:1200px;margin:0 auto;'>
+	<div id='login'>
+	<div id='img'><img src="image/reg-text2.png" alt="">
+	</div>
+	<ul class='one'>
+		<li>
+		<div class='yonghuming'>
+	    <span>用&nbsp&nbsp户&nbsp&nbsp名</span>
+	    </div>
+        <div class='shuru'>
+	    <input type="txet" id='uname' class='input'> 
+	    <span style='color:#FF0000;'>*</span>
+	    </div>
+	   </li>
+		<li>
+		<div class='yonghuming'>
+	    <span>登录密码</span>
+	    </div>
+        <div class='shuru'>
+	    <input type="password" id='upwd' class='input'> 
+	    <span style='color:#FF0000;'>*</span>
+	    </div>
+		</li>
+		<li>
+		<div class='yonghuming'>
+	    <span>验&nbsp&nbsp证&nbsp&nbsp码</span>
+	    </div>
+        <div class='shuru'>
+	    <input type="txet"  class='yanzhenma'>
+		<img src="image/captcha.png" alt="">
+	    </div>
+		</li>
+		<div id='checkbox'>
+	    <input type="checkbox" class='check'>
+	    <span class='checks'>记住登陆状态</span>
+		<a href="" class='wangji'>忘记密码？</a>
+		<li>
+		<div class='yonghuming'>
+	    </div>
+        <div id='butt'>
+	    <input type="buttom" value='登录'  class='login-btn' onclick='show()'>
+		<span id='ddd'></span>
+	    </div>
+		</li>
+    </ul>
+	</div>
+	</div>
+	<div id='login-box'>
+	<div class='login-boximg'>
+	<img src="image/login-text2.png" >
+	</div>
+	<div class='login-wenzi'>这是我第一次在官网购物</div>
+	<a href="mjl_register.html" class='btn'>立即注册</a>
+	</div>
+	</div>
+	<div id="foot_link"></div>
+	<script src="jquery.min.js"></script>
+	 <script>
+      $(function(){
+        $('#header_link').load('mjl_header.html');
+        $('#foot_link').load('mjl_footer.html');
+      })
+    </script>
+	<script>
+	//登录
+	function show(){
+	var xhr=new XMLHttpRequest();
+	xhr.onreadystatechange=function(){
+    if(xhr.readyState==4&&xhr.status==200){
+	var result=xhr.responseText;
+    ddd.innerHTML=result
+	}
+	}
+	xhr.open('post','/mypro/login',true)
+    var 
+	formdata='uname='+uname.value+'&upwd='+upwd.value
+	xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+	xhr.send(formdata);
+	}
+    //头部鼠标移入移出
+	    var lone=document.getElementById('lone');
+		var done=document.getElementById('done');
+			done.style.display='none';	
+		lone.onmouseover=function(){
+			done.style.display="block";
+		}
+		lone.onmouseout=function(){
+			done.style.display="none";
+		}
+		done.onmouseover=function(){
+			done.style.display="block";
+		}
+		done.onmouseout=function(){
+			done.style.display="none";
+		}
+	</script>
+</body>
+</html>
